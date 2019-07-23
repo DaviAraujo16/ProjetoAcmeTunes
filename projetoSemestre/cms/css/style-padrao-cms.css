@@ -1,0 +1,248 @@
+/*Padrão*/
+*{
+    padding:0px;
+    margin: 0px;
+    font-family: Yanone;
+    letter-spacing: 1.6px;
+}
+
+@font-face{
+    font-family:Yanone;
+    src:url(fonte/Yanone-Regular.ttf);
+}
+
+@font-face{
+    font-family:Yanone-Bold;
+    src:url(fonte/Yanone-Bold.ttf);
+}
+
+a{
+    cursor: pointer;
+}
+
+a:link{ 
+    text-decoration:none;
+    color:black;
+
+}
+
+a:visited {
+    text-decoration:none; 
+    color:black;   
+}
+a:hover {
+    text-decoration:aqua;
+    color:black;    
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    background-color: #6d6d6d;
+    margin-top:0px; 
+}
+
+#tudo{
+    width: 1200px;
+}
+
+#cms{
+    width: 1200px;
+    min-height: 500px;
+    height: auto;
+    margin-top: 45px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 45px;
+    -webkit-box-shadow: 0 0px 5px rgba(0,0,0,0.4);
+    box-shadow: 0 0px 5px rgba(0,0,0,0.4);
+}
+
+#cms2{
+    width: 1200px;
+    min-height: 1200px;
+    height: auto;
+    margin-top: 45px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 45px;
+    -webkit-box-shadow: 0 0px 5px rgba(0,0,0,0.4);
+    box-shadow: 0 0px 5px rgba(0,0,0,0.4);
+}
+
+/*Header CMS*/
+
+#header{
+    width: inherit;
+    height: 180px;
+    background-color:#1076b7;    
+}
+
+#linha-titulo{
+    width: 600px;
+    height: inherit;
+    float:left;
+    box-sizing: border-box;
+    padding-top: 55px;
+}
+
+.titulo-cms{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-left: 30px;
+}
+
+#linha-logotipo{
+    width: 600px;
+    height: inherit;
+    float:left;
+    font-family: Yanone-Bold;   
+}
+
+#container-logotipo{
+    width: 128px;
+    height: 128px;
+    margin-left: 390px;
+    margin-top:20px;
+}
+
+/*Menu CMS*/
+#menu{
+    width: inherit;
+    height: 160px;
+    background-color:#e8e8e8;  
+}
+
+#area-menu{
+    width: 780px;
+    height: inherit;
+    float: left;
+}
+
+.itens-menu{
+    width:195px;
+    height: inherit;
+    float: left;  
+}
+
+.itens-menu:hover{
+    background-color: #b6bfc4;
+    transition: 0.2s;
+}
+
+#icone-menu1{
+    width: inherit;
+    height: 120px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    padding-left: 45px;
+}
+
+#icone-menu2{
+    width: inherit;
+    height: 120px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    padding-left: 47px;
+}
+
+#icone-menu3{
+    width: inherit;
+    height: 120px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    padding-left: 54px;
+}
+
+#icone-menu4{
+    width: inherit;
+    height: 120px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    padding-left: 48px;
+}
+
+.titulo-menu{
+    width: inherit;
+    height: 40px;
+}
+
+#texto-menu1{
+    font-size: 28px;
+    margin-left: 25px;
+}
+
+#texto-menu2{
+    font-size: 28px;
+    margin-left: 23px;
+}
+
+#texto-menu3{
+    font-size: 28px;
+    margin-left: 25px;
+}
+
+#texto-menu4{
+    font-size:28px;
+    margin-left: 25px;
+}
+
+#area-info{
+    width: 420px;
+    height: inherit;
+    float: left;
+}
+
+#area-bem-vindo{
+    width: inherit;
+    height: 80px;
+    padding-top:30px;
+    padding-left: 110px;
+    box-sizing: border-box;
+}
+
+#alinha-texto-bem-vindo{
+    width:100px;
+    height:30px;
+    text-align: left;
+    font-size: 28px;
+}
+
+#area-logout{
+    width: inherit;
+    height: 30px;
+    box-sizing: border-box;
+    padding-top:20px;
+    padding-left: 300px;
+}
+
+
+#link-logout{
+    text-align: left;
+    font-size: 24px;
+    color: #e03526;
+}
+
+#link-logout:hover{
+    text-decoration: underline;
+    color: #c10f00;
+    transition: 0.3s;
+}
+
+/*Area do Footer*/
+#footer{
+    width: inherit;
+    height: 80px;
+    background-color: rgb(29,38,45);
+    padding-top: 18px;
+    box-sizing: border-box;
+}
+
+#texto-footer{
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}

@@ -1,0 +1,438 @@
+-- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: db_acme_tunes
+-- ------------------------------------------------------
+-- Server version	8.0.11
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tbl_ator`
+--
+
+DROP TABLE IF EXISTS `tbl_ator`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_ator` (
+  `cod_ator` int(5) NOT NULL AUTO_INCREMENT,
+  `nome_ator` varchar(100) NOT NULL,
+  `sexo` char(1) NOT NULL,
+  `idade` int(3) NOT NULL,
+  `nacionalidade` varchar(50) NOT NULL,
+  `atividades` varchar(255) NOT NULL,
+  `foto` varchar(50) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`cod_ator`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_ator`
+--
+
+LOCK TABLES `tbl_ator` WRITE;
+/*!40000 ALTER TABLE `tbl_ator` DISABLE KEYS */;
+INSERT INTO `tbl_ator` VALUES (1,'Jhonny Depp','M',55,'Americano','Ator','a9401aed9bf644ec9d3a4c27ef30573b.jpg',1),(2,'Davi Araujo','M',16,'Americano','Estudante ','db972184b8a3ae0d572a29eedd5b088a.png',0);
+/*!40000 ALTER TABLE `tbl_ator` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_diretor`
+--
+
+DROP TABLE IF EXISTS `tbl_diretor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_diretor` (
+  `cod_diretor` int(5) NOT NULL AUTO_INCREMENT,
+  `nome_diretor` varchar(25) NOT NULL,
+  `sobrenome_diretor` varchar(25) NOT NULL,
+  PRIMARY KEY (`cod_diretor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_diretor`
+--
+
+LOCK TABLES `tbl_diretor` WRITE;
+/*!40000 ALTER TABLE `tbl_diretor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_diretor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_fale_conosco`
+--
+
+DROP TABLE IF EXISTS `tbl_fale_conosco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_fale_conosco` (
+  `cod_sugestao` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `telefone` varchar(100) DEFAULT NULL,
+  `celular` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `home_page` varchar(100) DEFAULT NULL,
+  `link_facebook` varchar(255) DEFAULT NULL,
+  `sugestao` varchar(255) NOT NULL,
+  `info_produtos` varchar(255) DEFAULT NULL,
+  `sexo` char(1) NOT NULL,
+  `profissao` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`cod_sugestao`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_fale_conosco`
+--
+
+LOCK TABLES `tbl_fale_conosco` WRITE;
+/*!40000 ALTER TABLE `tbl_fale_conosco` DISABLE KEYS */;
+INSERT INTO `tbl_fale_conosco` VALUES (1,'Wolfgang Amadeus Mozart','114619-7014','1194924-5721','asdghagd@gmail.com','https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br/Using_the_Web_Storage_API','https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br/Using_the_Web_Storage_API','agadgad','sfasgf','M','agsddsagf');
+/*!40000 ALTER TABLE `tbl_fale_conosco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_filme`
+--
+
+DROP TABLE IF EXISTS `tbl_filme`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_filme` (
+  `cod_filme` int(5) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(50) NOT NULL,
+  `descricao` varchar(500) NOT NULL,
+  `imagem_filme` varchar(60) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `duracao` varchar(10) NOT NULL,
+  `preco` decimal(10,0) NOT NULL,
+  `dt_lancamentO` date NOT NULL,
+  PRIMARY KEY (`cod_filme`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_filme`
+--
+
+LOCK TABLES `tbl_filme` WRITE;
+/*!40000 ALTER TABLE `tbl_filme` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_filme` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_filme_diretor`
+--
+
+DROP TABLE IF EXISTS `tbl_filme_diretor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_filme_diretor` (
+  `cod_filme` int(5) NOT NULL,
+  `cod_diretor` int(5) NOT NULL,
+  KEY `fk_cod_diretor` (`cod_diretor`),
+  KEY `fk_cod_filme_diretor` (`cod_filme`),
+  CONSTRAINT `fk_cod_diretor` FOREIGN KEY (`cod_diretor`) REFERENCES `tbl_diretor` (`cod_diretor`),
+  CONSTRAINT `fk_cod_filme_diretor` FOREIGN KEY (`cod_filme`) REFERENCES `tbl_filme` (`cod_filme`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_filme_diretor`
+--
+
+LOCK TABLES `tbl_filme_diretor` WRITE;
+/*!40000 ALTER TABLE `tbl_filme_diretor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_filme_diretor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_filme_do_mes`
+--
+
+DROP TABLE IF EXISTS `tbl_filme_do_mes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_filme_do_mes` (
+  `cod_pagina` int(5) NOT NULL AUTO_INCREMENT,
+  `status` tinyint(4) NOT NULL,
+  `cod_filme` int(5) NOT NULL,
+  PRIMARY KEY (`cod_pagina`),
+  KEY `fk_cod_filme_do_mes` (`cod_filme`),
+  CONSTRAINT `fk_cod_filme_do_mes` FOREIGN KEY (`cod_filme`) REFERENCES `tbl_filme` (`cod_filme`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_filme_do_mes`
+--
+
+LOCK TABLES `tbl_filme_do_mes` WRITE;
+/*!40000 ALTER TABLE `tbl_filme_do_mes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_filme_do_mes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_filme_genero`
+--
+
+DROP TABLE IF EXISTS `tbl_filme_genero`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_filme_genero` (
+  `cod_filme` int(5) NOT NULL,
+  `cod_genero` int(5) NOT NULL,
+  KEY `fk_cod_genero_filme` (`cod_genero`),
+  KEY `fk_cod_filme_genero` (`cod_filme`),
+  CONSTRAINT `fk_cod_filme_genero` FOREIGN KEY (`cod_filme`) REFERENCES `tbl_filme` (`cod_filme`),
+  CONSTRAINT `fk_cod_genero_filme` FOREIGN KEY (`cod_genero`) REFERENCES `tbl_genero` (`cod_genero`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_filme_genero`
+--
+
+LOCK TABLES `tbl_filme_genero` WRITE;
+/*!40000 ALTER TABLE `tbl_filme_genero` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_filme_genero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_genero`
+--
+
+DROP TABLE IF EXISTS `tbl_genero`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_genero` (
+  `cod_genero` int(5) NOT NULL AUTO_INCREMENT,
+  `genero` varchar(25) NOT NULL,
+  PRIMARY KEY (`cod_genero`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_genero`
+--
+
+LOCK TABLES `tbl_genero` WRITE;
+/*!40000 ALTER TABLE `tbl_genero` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_genero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_loja`
+--
+
+DROP TABLE IF EXISTS `tbl_loja`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_loja` (
+  `cod_loja` int(2) NOT NULL AUTO_INCREMENT,
+  `endereco` varchar(100) NOT NULL,
+  `coordenada_latitude` varchar(45) NOT NULL,
+  `coordenada_longitude` varchar(45) NOT NULL,
+  `descricao` varchar(25) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`cod_loja`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_loja`
+--
+
+LOCK TABLES `tbl_loja` WRITE;
+/*!40000 ALTER TABLE `tbl_loja` DISABLE KEYS */;
+INSERT INTO `tbl_loja` VALUES (1,'Av. Luis Carlos Berrini, nº666, São Paulo-SP','-23.605398','-46.693059','Matriz',1);
+/*!40000 ALTER TABLE `tbl_loja` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_nivel_usuario`
+--
+
+DROP TABLE IF EXISTS `tbl_nivel_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_nivel_usuario` (
+  `cod_nivel` int(2) NOT NULL,
+  `nome_nivel` varchar(40) NOT NULL,
+  `adm_conteudo` tinyint(4) DEFAULT NULL,
+  `adm_contato` tinyint(4) DEFAULT NULL,
+  `adm_produto` tinyint(4) DEFAULT NULL,
+  `adm_usuario` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`cod_nivel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_nivel_usuario`
+--
+
+LOCK TABLES `tbl_nivel_usuario` WRITE;
+/*!40000 ALTER TABLE `tbl_nivel_usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_nivel_usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_nossas_lojas`
+--
+
+DROP TABLE IF EXISTS `tbl_nossas_lojas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_nossas_lojas` (
+  `cod_pagina` int(5) NOT NULL AUTO_INCREMENT,
+  `titulo_lojas` varchar(50) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`cod_pagina`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_nossas_lojas`
+--
+
+LOCK TABLES `tbl_nossas_lojas` WRITE;
+/*!40000 ALTER TABLE `tbl_nossas_lojas` DISABLE KEYS */;
+INSERT INTO `tbl_nossas_lojas` VALUES (6,'Nossas Lojas',1);
+/*!40000 ALTER TABLE `tbl_nossas_lojas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_promocao`
+--
+
+DROP TABLE IF EXISTS `tbl_promocao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_promocao` (
+  `cod_promocao` int(3) NOT NULL AUTO_INCREMENT,
+  `valor_promocao` int(2) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `cod_filme` int(5) NOT NULL,
+  PRIMARY KEY (`cod_promocao`),
+  KEY `fk_cod_filme` (`cod_filme`),
+  CONSTRAINT `fk_cod_filme` FOREIGN KEY (`cod_filme`) REFERENCES `tbl_filme` (`cod_filme`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_promocao`
+--
+
+LOCK TABLES `tbl_promocao` WRITE;
+/*!40000 ALTER TABLE `tbl_promocao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_promocao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_rel_loja`
+--
+
+DROP TABLE IF EXISTS `tbl_rel_loja`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_rel_loja` (
+  `cod_pagina` int(5) NOT NULL,
+  `cod_loja` int(2) NOT NULL,
+  KEY `fk_cod_pagina` (`cod_pagina`),
+  KEY `fk_cod_loja` (`cod_loja`),
+  CONSTRAINT `fk_cod_loja` FOREIGN KEY (`cod_loja`) REFERENCES `tbl_loja` (`cod_loja`),
+  CONSTRAINT `fk_cod_pagina` FOREIGN KEY (`cod_pagina`) REFERENCES `tbl_nossas_lojas` (`cod_pagina`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_rel_loja`
+--
+
+LOCK TABLES `tbl_rel_loja` WRITE;
+/*!40000 ALTER TABLE `tbl_rel_loja` DISABLE KEYS */;
+INSERT INTO `tbl_rel_loja` VALUES (6,1);
+/*!40000 ALTER TABLE `tbl_rel_loja` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_sobre`
+--
+
+DROP TABLE IF EXISTS `tbl_sobre`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_sobre` (
+  `cod_pagina` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo_sobre` varchar(50) NOT NULL,
+  `imagem_sobre` varchar(50) NOT NULL,
+  `sub_titulo` varchar(25) NOT NULL,
+  `texto` varchar(315) NOT NULL,
+  `texto_missao` varchar(255) NOT NULL,
+  `texto_visao` varchar(255) NOT NULL,
+  `texto_valores` varchar(255) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  PRIMARY KEY (`cod_pagina`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_sobre`
+--
+
+LOCK TABLES `tbl_sobre` WRITE;
+/*!40000 ALTER TABLE `tbl_sobre` DISABLE KEYS */;
+INSERT INTO `tbl_sobre` VALUES (1,'Sobre a Locadora','8a703897555bc5ea6cde09c010dad657.jpg','Acme Tunes','A Acme Tunes é um Locadora de Filmes localizada em São Paulo.\r\nNós estamos no mercado de vendas e alugueis de filmes a 18 anos, sempre com o objetivo de inovar nesse ramo.\r\nPor isso decidimos vender nossos produtos tanto fisicamente quanto pela internet, para assim facilitar a vida dos nossos clientes.','Entregar produtos de qualidade aos nossos clientes, oferecendo-lhes um atendimento rápido e de qualidade.                                                                                    ','Ser reconhecida como Líder em Venda e aluguel de Filmes e assim oferecer aos nossos consumidores o melhor atendimento possível.                                                                                    ','Rapidez, Eficiência, Ética, Compromisso e Confiança.                                                                                    ',1);
+/*!40000 ALTER TABLE `tbl_sobre` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_usuario`
+--
+
+DROP TABLE IF EXISTS `tbl_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `tbl_usuario` (
+  `cod_usuario` int(5) NOT NULL AUTO_INCREMENT,
+  `nome_usuario` varchar(64) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `cod_nivel` int(2) NOT NULL,
+  PRIMARY KEY (`cod_usuario`),
+  KEY `fk_cod_nivel` (`cod_nivel`),
+  CONSTRAINT `fk_cod_nivel` FOREIGN KEY (`cod_nivel`) REFERENCES `tbl_nivel_usuario` (`cod_nivel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_usuario`
+--
+
+LOCK TABLES `tbl_usuario` WRITE;
+/*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-05-06 16:56:21
